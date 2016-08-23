@@ -19,4 +19,51 @@ package problems_10_19;
 
 
 public class Problem19 {
+    int[] monthDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+
+
+    public static void main(String[] args) {
+        int startingYear = 1900;
+        int day = 0;
+        int dayOfWeek = 0;
+        int month = 0;
+        int[] monthDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+        int sundayCount = 0;
+
+        while(startingYear< 2001)
+        {
+            if(startingYear%4 == 0)
+            {
+                monthDays[1] = 29;
+            }else
+            {
+                monthDays[1] = 28;
+            }
+
+            while(month < 12)
+            {
+
+                if(dayOfWeek == 6 && startingYear > 1900)
+                {
+                    sundayCount += 1;
+                }
+
+                while(day < monthDays[month])
+                {
+                    dayOfWeek = (dayOfWeek+1)%7;
+                    day++;
+                }
+
+                day = 0;
+                month++;
+            }
+            month = 0;
+            startingYear++;
+        }
+        System.out.println(sundayCount);
+
+    }
+
 }
