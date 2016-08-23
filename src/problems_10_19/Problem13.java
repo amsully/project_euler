@@ -8,7 +8,7 @@ public class Problem13 {
 	
 	public static void main(String[] args) throws IOException
 	{
-		FileReader fileReader = new FileReader("/home/ams/Dropbox/workspace/Project_Euler/src/Problem13_Numbers.txt");
+		FileReader fileReader = new FileReader("/home/alex/IdeaProjects/project_euler/src/Problem13_Numbers.txt");
 
 		
 		BufferedReader lineReader = new BufferedReader(fileReader);
